@@ -1,9 +1,6 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom'; 
-import Home from './Home';
-import Breakfast from './Breakfast';
-import Lunch from './Lunch';
-import Dinner from './Dinner'
+import {Link} from 'react-router-dom'; 
+
 
 const Navbar = () => {
   return (
@@ -15,16 +12,11 @@ const Navbar = () => {
         <li><Link to='/dinner'>Dinner </Link></li>
       </ul>
 
-      <div className="container">
-          <Route exact path="/" component={Home}/>
-          <Route path="/breakfast" component={Breakfast}/>
-          <Route path="/lunch" component={Lunch}/>
-          <Route path="/dinner" component={Dinner}/>
 
-        </div>
       
     </div>
   );
 };
 
 export default Navbar;
+
