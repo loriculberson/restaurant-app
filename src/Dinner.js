@@ -4,7 +4,7 @@ import Menu from './Menu';
 const Dinner = (props) => {
   return (
     <div>
-      <h2>Lunch </h2>
+      <h2>Dinner </h2>
       <Menu 
         foodList={props.menu}
       />
