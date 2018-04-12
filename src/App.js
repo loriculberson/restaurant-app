@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Route} from 'react-router-dom'; 
+import { Route, Switch } from 'react-router-dom'; 
 import Navbar from './Navbar';
 import menuData from './data.js';
 import Home from './Home';
 import Breakfast from './Breakfast';
 import Lunch from './Lunch';
-import Dinner from './Dinner'
+import Dinner from './Dinner';
+import MenuItem from './MenuItem';
 
 class App extends Component {
   constructor(props){
@@ -24,13 +25,16 @@ class App extends Component {
        <Navbar />
         <div className="container">
           <Route exact path="/" component={Home}/>
-          <Route path="/breakfast" render= { 
+          <Route path="/breakfast/:food" component={ MenuItem } />
+          <Route exact path="/breakfast" render = { 
             routeProps => <Breakfast {...routeProps} menu={breakfast.items} />
           } />
-          <Route path="/lunch" render= { 
+          <Route path="/lunch/:food" component={ MenuItem } />
+          <Route exact path="/lunch" render= { 
             routeProps => <Lunch {...routeProps} menu={lunch.items} />
           } />
-          <Route path="/dinner" render= { 
+          <Route path="/dinner/:food" component={ MenuItem } />
+          <Route exact path="/dinner" render= { 
             routeProps => <Dinner {...routeProps} menu={dinner.items} />
           } />
         </div>
